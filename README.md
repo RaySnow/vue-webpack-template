@@ -1,8 +1,10 @@
 # vue-webpack-template
-    -- 移动端 中小型 单页面应用 模板
-    -- 基于vue-cli(vue 推荐脚手架 vue-webpack模板)
-    -- 使用 vue vue-router vue-resource webpack flexible sass postCss ES6 等
 
+```
+移动端 中小型 单页面应用 模板
+基于vue-cli(vue 推荐脚手架 vue-webpack模板)
+使用 vue vue-router vue-resource webpack flexible sass postCss ES6 等
+```
 
 ## Build Setup
 
