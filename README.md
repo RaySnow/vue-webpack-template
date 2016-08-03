@@ -34,7 +34,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 # vue + webpack 的各种坑
 
 ```
-"vue-resource": "0.9" 以后的版本 get请求无法直接 使用{foo: bar} 传递参数, 返回结果也无法自动编译为json 需要使用 resp.json() 建议所有ajax使用 post请求
+"vue-resource": "0.9" 以后的版本 get请求无法直接使用{foo: bar}传递参数,需要使用{params: {foo: bar}}, 返回结果也无法自动编译为json 需要使用 resp.json() 建议所有ajax使用 post请求
 
 简单使用全局数据的方法, 在router外层加一层 vue (即app.vue), 需要放在全局的数据可以放在app.vue下
 
