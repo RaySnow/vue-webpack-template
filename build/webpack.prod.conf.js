@@ -43,8 +43,9 @@ var webpackConfig = merge(baseWebpackConfig, {
         // you can customize output by editing /index.html
         // see https://github.com/ampedandwired/html-webpack-plugin
         new HtmlWebpackPlugin({
-            filename: 'example.html',
+            filename: 'pages/example.html',
             template: path.join(config.build.pages, 'example.html'),
+            chunks: ['example'],
             inject: true,
             minify: {
                 removeComments: true,
@@ -57,8 +58,9 @@ var webpackConfig = merge(baseWebpackConfig, {
             chunksSortMode: 'dependency'
         }),
         new HtmlWebpackPlugin({
-            filename: 'example2.html',
-            template: path.join(config.build.pages, 'example2.html'),
+            filename: 'pages/router.html',
+            template: path.join(config.build.pages, 'router.html'),
+            chunks: ['router'],
             inject: true,
             minify: {
                 removeComments: true,
@@ -69,6 +71,18 @@ var webpackConfig = merge(baseWebpackConfig, {
             },
             // necessary to consistently work with multiple chunks via CommonsChunkPlugin
             chunksSortMode: 'dependency'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'pages/no_vue.html',
+            template: path.join(config.build.pages, 'no_vue.html'),
+            chunks: [],
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeAttributeQuotes: true
+                // more options:
+                // https://github.com/kangax/html-minifier#options-quick-reference
+            }
         })
         // split vendor js into its own file
         // new webpack.optimize.CommonsChunkPlugin({

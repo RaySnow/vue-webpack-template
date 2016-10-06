@@ -1,0 +1,222 @@
+/*
+  全局的css 和 部分公用的class 在最外层vue实例被引入, class名可以在全局被使用
+*/
+@import "../../base/css/common";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: "Microsoft YaHei", "Hiragino Sans GB";
+  background-color: $bg-color;
+  letter-spacing: 1px;
+  ul {
+    list-style: none;
+  }
+  a {
+    &:link {
+      text-decoration: none;
+    }
+    &:active {
+      text-decoration: none;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    &:visited {
+      text-decoration: none;
+    }
+  }
+}
+
+//强制使用IE盒模型
+* {
+  box-sizing: border-box;
+}
+
+// 一些常用的公共样式
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.icon {
+  display: inline-block;
+  position: relative;
+  top: px2rem(4px);
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// 不换行显示省略号
+.text-nowrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.horizontal-line {
+  width: 100%;
+  height: 1px;
+  background-color: #dcdcdc;
+  margin-top: px2rem(10px);
+  margin-bottom: px2rem(10px);
+}
+
+//
+// Typography  引用一些bootstrap的基础样式
+// --------------------------------------------------
+$gray-base: #000 !default;
+$gray-light: lighten($gray-base, 46.7%) !default; // #777
+
+//** Headings small color
+$headings-small-color: $gray-light !default;
+
+$font-size-base: 14px !default;
+$font-size-h1: floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2: floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3: ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4: ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5: $font-size-base !default;
+$font-size-h6: ceil(($font-size-base * 0.85)) !default; // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base: 1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed: floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.1 !default;
+$headings-color: inherit !default;
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+
+  small,
+  .small {
+    font-weight: normal;
+    line-height: 1;
+    color: $headings-small-color;
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-top: $line-height-computed;
+  margin-bottom: ($line-height-computed / 2);
+
+  small,
+  .small {
+    font-size: 65%;
+  }
+}
+
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: ($line-height-computed / 2);
+  margin-bottom: ($line-height-computed / 2);
+
+  small,
+  .small {
+    font-size: 75%;
+  }
+}
+
+h1, .h1 {
+  @include font-dpr($font-size-h1);
+}
+
+h2, .h2 {
+  @include font-dpr($font-size-h2);
+}
+
+h3, .h3 {
+  @include font-dpr($font-size-h3);
+}
+
+h4, .h4 {
+  @include font-dpr($font-size-h4);
+}
+
+h5, .h5 {
+  @include font-dpr($font-size-h5);
+}
+
+h6, .h6 {
+  @include font-dpr($font-size-h6);
+}
+
+//
+// 首页的一些其他样式
+// --------------------------------------------------
+#hide {
+  text-align: center;
+  padding-top: px2rem(60px);
+}
+
+//
+//常用动画样式
+//
+
+/*
+   router 切换的过场动画
+*/
+.expand-transition {
+  transition: all .3s ease;
+}
+
+/* .expand-enter 定义进入的开始状态 */
+/* .expand-leave 定义离开的结束状态 */
+.expand-enter, .expand-leave {
+  opacity: 0;
+}
+
+
+/*
+  其他自定义动画
+*/
+
+/* 旋转 */
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: center center;
+  }
+  50% {
+    transform: rotate(180deg);
+    transform-origin: center center;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: center center;
+  }
+}
+
