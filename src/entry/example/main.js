@@ -5,13 +5,14 @@ var VueRouter = require("vue-router");
 Vue.use(vueResource);
 Vue.use(VueRouter);
 
-var App = require('./app.vue');
-var home = require('./views/home/index.vue');
+var App = require('./App.vue');
+var home = require('./../../views/home/index.vue');
+var menu = require('./../../views/menu/index.vue');
 
 // 开启debug模式
 Vue.config.debug = true;
 
-// 让 vue-resource 使用 content-type urlencode 的格式进行ajax请求 
+// 让 vue-resource 使用 content-type urlencode 的格式进行ajax请求
 Vue.http.options.emulateJSON = true;
 
 var router = new VueRouter();
@@ -21,6 +22,10 @@ router.map({
   '/home':{
     name: 'home',
     component: home
+  },
+  '/menu':{
+    name: 'menu',
+    component: menu
   }
 });
 

@@ -6,7 +6,9 @@
 
 <template>
     <div class="head-tab">
-        {{ homeData.title }}
+        <h1>
+            {{ homeData.title }}
+        </h1>
     </div>
 </template>
 

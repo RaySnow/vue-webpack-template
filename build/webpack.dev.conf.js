@@ -1,14 +1,15 @@
-var config = require('../config')
-var webpack = require('webpack')
-var merge = require('webpack-merge')
-var utils = require('./utils')
-var baseWebpackConfig = require('./webpack.base.conf')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var config = require('../config');
+var webpack = require('webpack');
+var merge = require('webpack-merge');
+var path = require('path');
+var utils = require('./utils');
+var baseWebpackConfig = require('./webpack.base.conf');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
-})
+});
 
 module.exports = merge(baseWebpackConfig, {
   module: {
@@ -26,9 +27,14 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.NoErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
+      filename: 'example.html',
+      template: path.join(config.build.pages, 'example.html'),
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'example2.html',
+      template: path.join(config.build.pages, 'example2.html'),
       inject: true
     })
   ]
-})
+});

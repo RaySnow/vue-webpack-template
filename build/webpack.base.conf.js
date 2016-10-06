@@ -1,11 +1,12 @@
-var path = require('path')
-var config = require('../config')
-var utils = require('./utils')
-var projectRoot = path.resolve(__dirname, '../')
+var path = require('path');
+var config = require('../config');
+var utils = require('./utils');
+var projectRoot = path.resolve(__dirname, '../');
 
 module.exports = {
     entry: {
-        app: './src/main.js'
+        example: './src/entry/example/main.js',
+        example2: './src/entry/example2/main.js'
     },
     output: {
         path: config.build.assetsRoot,
@@ -18,6 +19,7 @@ module.exports = {
         alias: {
             'src': path.resolve(__dirname, '../src'),
             'assets': path.resolve(__dirname, '../src/assets'),
+            'pages': path.resolve(__dirname, '../src/pages'),
             'components': path.resolve(__dirname, '../src/components')
         }
     },
@@ -66,19 +68,19 @@ module.exports = {
         loaders: utils.cssLoaders(),
         /*
              autoprefixer 添加浏览器兼容的css前缀  设置规则参考地址: (官方)https://github.com/postcss/autoprefixer (中文)http://www.ydcss.com/archives/94
-             todo: cssnano, 简化和压缩css (discardUnused等四个选项是不安全选项 所以关闭,如果css出现未知错误,请关闭此插件)
+             cssnano, 简化和压缩css (discardUnused等四个选项是不安全选项 所以关闭,如果css出现未知错误,请关闭此插件)
         */
-        postcss: [require('cssnano')(
-            {
-                autoprefixer: false,
-                discardUnused: false,
-                mergeIdents: false,
-                reduceIdents: false,
-                zindex: false
-            }
-        )],
+        // postcss: [require('cssnano')(
+        //     {
+        //         autoprefixer: false,
+        //         discardUnused: false,
+        //         mergeIdents: false,
+        //         reduceIdents: false,
+        //         zindex: false
+        //     }
+        // )],
         autoprefixer: {
-            browsers: ['last 2 versions', 'Android >= 4.0', 'iOS 7']
+            browsers: ['Android > 1', 'iOS > 6', 'Safari > 6', 'ChromeAndroid > 1', 'FirefoxAndroid > 1']
         }
     }
-}
+};
