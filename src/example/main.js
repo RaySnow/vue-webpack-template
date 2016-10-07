@@ -17,7 +17,7 @@ Vue.http.options.emulateJSON = true;
 
 var router = new VueRouter();
 
-// 定义路由规则
+// 定义路由规则   TODO 后期考虑升级到vue-router2.0  by hupo 2016.10.07
 router.map({
   '/home':{
     name: 'home',

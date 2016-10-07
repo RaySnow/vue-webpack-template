@@ -33,9 +33,10 @@ module.exports = merge(baseWebpackConfig, {
             inject: true
         }),
         new HtmlWebpackPlugin({
-            filename: 'pages/router.html',
-            template: path.join(config.dev.pages, 'router.html'),
-            chunks: ['router'],
+            filename: 'index.html',
+            template: 'index.html',
+            title: "跳转页",
+            chunks: [],
             inject: true
         })
     ]

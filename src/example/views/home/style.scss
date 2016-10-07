@@ -1,5 +1,5 @@
 // 引用公共样式和方法
-@import "../../../base/css/common";
+@import "../../../base/styles/common";
 
 #home{
 //    这里写样式
@@ -22,6 +22,31 @@
         border: 1px solid cadetblue;
         border-radius: 5px;
         margin-bottom: px2rem(40px);
+    }
+
+    .image {
+        height: px2rem(200px);
+        width: px2rem(200px);
+        background-image: url("../../images/logo.png") !important;
+        background-size: 100% 100% !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+    }
+    .image-small {
+        height: px2rem(100px);
+        width: px2rem(100px);
+        background-image: url("../../images/logo-small.png") !important;
+        background-size: 100% 100% !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+    }
+    .image-static {
+        height: px2rem(200px);
+        width: px2rem(200px);
+        background-image: url("../../../static/images/avatar.png") !important;
+        background-size: 100% 100% !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
     }
 }
 

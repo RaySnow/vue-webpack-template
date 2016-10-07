@@ -18,15 +18,6 @@ npm run dev
 # build for production with minification   发布 请运行此命令(master分支下), 然后把所有变动的文件统一上传到git
 npm run build
 
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 

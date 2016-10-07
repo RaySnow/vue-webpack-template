@@ -58,33 +58,12 @@ var webpackConfig = merge(baseWebpackConfig, {
             chunksSortMode: 'dependency'
         }),
         new HtmlWebpackPlugin({
-            filename: 'pages/router.html',
-            template: path.join(config.build.pages, 'router.html'),
-            chunks: ['router'],
-            inject: true,
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true,
-                removeAttributeQuotes: true
-                // more options:
-                // https://github.com/kangax/html-minifier#options-quick-reference
-            },
-            // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-            chunksSortMode: 'dependency'
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'pages/no_vue.html',
-            template: path.join(config.build.pages, 'no_vue.html'),
+            filename: 'index.html',
+            template: 'index.html',
+            title: "跳转页",
             chunks: [],
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true,
-                removeAttributeQuotes: true
-                // more options:
-                // https://github.com/kangax/html-minifier#options-quick-reference
-            }
-        })
-        // split vendor js into its own file
+            inject: true
+        })        // split vendor js into its own file
         // new webpack.optimize.CommonsChunkPlugin({
         //     name: 'vendor',
         //     minChunks: function (module, count) {

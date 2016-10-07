@@ -1,15 +1,17 @@
 <template>
     <div class="app">
-        <router-view></router-view>
+        <router-view :base-data='baseData'></router-view>
     </div>
 </template>
 <script>
     module.exports = {
         data: function () {
             return {
-                massage: "这里用于存放公共数据"
+                baseData: {
+                    msg: "这里用于存放公共数据"
+                }
             }
         }
     }
 </script>
-<style src="./css/index.scss" lang="scss"></style>
+<style src="./styles/index.scss" lang="scss"></style>

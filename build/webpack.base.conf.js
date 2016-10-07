@@ -5,8 +5,7 @@ var projectRoot = path.resolve(__dirname, '../');
 
 module.exports = {
     entry: {
-        example: './src/example/main.js',
-        router: './src/router/main.js'
+        example: './src/example/main.js'
     },
     output: {
         path: config.build.assetsRoot,
@@ -19,7 +18,6 @@ module.exports = {
         alias: {
             'src': path.resolve(__dirname, '../src'),
             'assets': path.resolve(__dirname, '../src/assets'),
-            'pages': path.resolve(__dirname, '../src/pages'),
             'components': path.resolve(__dirname, '../src/components')
         }
     },
@@ -51,7 +49,7 @@ module.exports = {
                 loader: 'url',
                 query: {
                     limit: 4000,
-                    name: utils.assetsPath('img/[name].[hash:7].[ext]')
+                    name: utils.assetsPath('images/[name].[hash:7].[ext]')
                 }
             },
             {
